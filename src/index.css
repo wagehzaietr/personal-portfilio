@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0f172a; 
+  --secondary: #7c3aed;
+  --accent: #3b82f6;
+  --text: #f8fafc;
+  --background: #020617;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  a {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .container-padding {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+}
