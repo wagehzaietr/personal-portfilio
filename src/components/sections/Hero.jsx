@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Lottie from 'lottie-react';
+import animationData from '../ui/Ai.json'
 
 const Hero = () => {
   const ref = useRef(null);
@@ -94,140 +96,164 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background z-10"></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-20">
-        <div className="max-w-5xl mx-auto">
-          {/* Personalized greeting */}
-          <motion.p
-            className="text-secondary font-medium mb-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {getGreeting()}, I am
-          </motion.p>
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="max-w-2xl">
+            {/* Personalized greeting */}
+            <motion.p
+              className="text-secondary font-medium mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {getGreeting()}, I am
+            </motion.p>
 
-          {/* Animated name text */}
-          <motion.h1 
-            className="text-white mb-6"
-            variants={heroTextVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {nameText.map((letter, index) => (
-              <motion.span
-                key={index}
-                variants={letterVariants}
-                className="inline-block"
+            {/* Animated name text */}
+            <motion.h1 
+              className="text-white mb-6"
+              variants={heroTextVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {nameText.map((letter, index) => (
+                <motion.span
+                  key={index}
+                  variants={letterVariants}
+                  className="inline-block"
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
+            </motion.h1>
+
+            {/* Animated subtitle */}
+            <motion.div
+              className="overflow-hidden h-16 my-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+            >
+              <motion.h2
+                className="bg-clip-text text-transparent bg-gradient-to-r from-secondary via-purple-400 to-accent mb-8"
+                animate={{ y: [0, -120, -240, -360, -240, -120, 0] }}
+                transition={{ 
+                  duration: 10, 
+                  ease: "easeInOut", 
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  repeatDelay: 1
+                }}
               >
-                {letter === " " ? "\u00A0" : letter}
-              </motion.span>
-            ))}
-          </motion.h1>
+                <span className="block h-20 py-4">Web Designer</span>
+                <span className="block h-20 py-4">UI/UX Expert</span>
+                <span className="block h-20 py-4">Frontend Developer</span>
+                <span className="block h-20 py-4">Creative Thinker</span>
+                <span className="block h-20 py-4">UI/UX Expert</span>
+                <span className="block h-20 py-4">Web Designer</span>
+              </motion.h2>
+            </motion.div>
 
-          {/* Animated subtitle */}
+            {/* Description text */}
+            <motion.p 
+              className="text-lg text-gray-300 mb-10 max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              data-parallax="1.2"
+            >
+              I craft high-performance, visually stunning digital experiences that engage users and drive business growth. Let's transform your vision into reality.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.6, duration: 0.6 }}
+            >
+              <motion.a 
+                href="#projects"
+                className="px-8 py-3 rounded-md bg-gradient-to-r from-secondary to-accent text-white font-medium hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:translate-y-[-2px]"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                View My Work
+              </motion.a>
+              <motion.a 
+                href="#contact"
+                className="px-8 py-3 rounded-md border border-gray-600 text-white font-medium hover:border-accent hover:text-accent transition-all duration-300 hover:translate-y-[-2px]"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get in Touch
+              </motion.a>
+            </motion.div>
+          </div>
+          
+          {/* Animation on the right side */}
           <motion.div
-            className="overflow-hidden h-16 my-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.5 }}
+            className="mt-10 md:mt-0 md:ml-auto"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <motion.h2
-              className="bg-clip-text text-transparent bg-gradient-to-r from-secondary via-purple-400 to-accent mb-8"
-              animate={{ y: [0, -120, -240, -360, -240, -120, 0] }}
-              transition={{ 
-                duration: 10, 
-                ease: "easeInOut", 
-                repeat: Infinity,
-                repeatType: "loop",
-                repeatDelay: 1
-              }}
-            >
-              <span className="block h-20 py-4">Web Designer</span>
-              <span className="block h-20 py-4">UI/UX Expert</span>
-              <span className="block h-20 py-4">Frontend Developer</span>
-              <span className="block h-20 py-4">Creative Thinker</span>
-              <span className="block h-20 py-4">UI/UX Expert</span>
-              <span className="block h-20 py-4">Web Designer</span>
-            </motion.h2>
-          </motion.div>
-
-          {/* Description text */}
-          <motion.p 
-            className="text-lg text-gray-300 mb-10 max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-            data-parallax="1.2"
-          >
-            I craft high-performance, visually stunning digital experiences that engage users and drive business growth. Let's transform your vision into reality.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 0.6 }}
-          >
-            <motion.a 
-              href="#projects"
-              className="px-8 py-3 rounded-md bg-gradient-to-r from-secondary to-accent text-white font-medium hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:translate-y-[-2px]"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              View My Work
-            </motion.a>
-            <motion.a 
-              href="#contact"
-              className="px-8 py-3 rounded-md border border-gray-600 text-white font-medium hover:border-accent hover:text-accent transition-all duration-300 hover:translate-y-[-2px]"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Get in Touch
-            </motion.a>
+            <Lottie animationData={animationData} className="w-full max-w-md" />
           </motion.div>
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <motion.div 
-        className="absolute right-0 bottom-0 w-1/3 h-1/3 bg-gradient-to-tl from-secondary/20 to-transparent rounded-full blur-3xl z-0"
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3] 
-        }}
-        transition={{ 
-          duration: 8, 
-          repeat: Infinity,
-          repeatType: "reverse" 
-        }}
-        data-parallax="-0.5"
-      />
-      
-      <motion.div 
-        className="absolute left-10 top-32 w-24 h-24 md:w-40 md:h-40 border border-secondary/30 rounded-full z-0"
-        data-parallax="2"
-        animate={{ 
-          rotate: 360,
-          scale: [1, 1.1, 1]
-        }}
-        transition={{ 
-          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-          scale: { duration: 5, repeat: Infinity, repeatType: "reverse" }
-        }}
-      />
-      
-      <motion.div 
-        className="hidden md:block absolute right-1/4 top-1/4 w-16 h-16 border border-accent/20 rounded-full z-0"
-        data-parallax="1.5"
-        animate={{ 
-          rotate: -360,
-          scale: [1, 1.2, 1]
-        }}
-        transition={{ 
-          rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-          scale: { duration: 6, repeat: Infinity, repeatType: "reverse" }
-        }}
-      />
+      {/* Falling Stars */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute bg-white z-10"
+          style={{
+            top: `${Math.random() * -10}%`,
+            left: `${Math.random() * 100}%`,
+            width: `${Math.random() * 2 + 1}px`,
+            height: `${Math.random() * 2 + 1}px`,
+            boxShadow: '0 0 4px 1px rgba(255, 255, 255, 0.7)',
+            opacity: Math.random() * 0.7 + 0.3,
+          }}
+          animate={{
+            top: '110%',
+            left: `${parseFloat(Math.random() * 20 - 10) + parseInt(i * 5)}%`,
+            opacity: [0.7, 0.9, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 15,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 10,
+          }}
+        />
+      ))}
+
+      {/* Larger stars (less frequent) */}
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i + 'large'}
+          className="absolute z-10"
+          style={{
+            top: `${Math.random() * -10}%`,
+            left: `${Math.random() * 100}%`,
+            opacity: Math.random() * 0.5 + 0.5,
+          }}
+          animate={{
+            top: '110%',
+            left: `${parseFloat(Math.random() * 20 - 10) + parseInt(i * 20)}%`,
+            opacity: [0.8, 1, 0.3],
+          }}
+          transition={{
+            duration: Math.random() * 8 + 10,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 5,
+          }}
+        >
+          <div className="h-1 w-1 bg-white rounded-full shadow-[0_0_5px_2px_rgba(255,255,255,0.9)]"></div>
+        </motion.div>
+      ))}
       
       {/* Scroll indicator */}
       <motion.div 

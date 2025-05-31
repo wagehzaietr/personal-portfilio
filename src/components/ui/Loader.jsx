@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import Lottie from 'lottie-react';
+import loaderData from '../ui/loader.json'
 
 const Loader = () => {
   const [fadeOut, setFadeOut] = useState(false);
@@ -25,17 +27,7 @@ const Loader = () => {
 
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
-      <div className="flex flex-col items-center">
-        <div className="relative w-24 h-24">
-          {/* Outer spinner */}
-          <div className="absolute inset-0 border-4 border-t-primary border-r-transparent border-b-accent border-l-transparent rounded-full animate-spin"></div>
-          
-          {/* Inner spinner */}
-          <div className="absolute inset-2 border-4 border-t-transparent border-r-primary border-b-transparent border-l-accent rounded-full animate-spin-slow"></div>
-        </div>
-        
-        <h2 className="mt-6 text-xl font-bold text-white animate-pulse">Loading...</h2>
-      </div>
+      <Lottie animationData={loaderData}/>
     </div>
   );
 };
