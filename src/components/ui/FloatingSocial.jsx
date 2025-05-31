@@ -48,7 +48,7 @@ const FloatingSocial = () => {
             href="https://wa.me/963960902967" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:shadow-[#25D366]/30 transform hover:scale-110 transition-all duration-300"
+            className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:shadow-[#25D366]/30 transform hover:scale-110 transition-all duration-300"
             aria-label="WhatsApp"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
@@ -61,7 +61,7 @@ const FloatingSocial = () => {
             href="https://www.instagram.com/wageh_zaetr?igsh=MWJ4eGMwNmx4bjZvbQ==" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="w-12 h-12 rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] flex items-center justify-center shadow-lg hover:shadow-[#FD1D1D]/30 transform hover:scale-110 transition-all duration-300"
+            className="w-10 h-10 rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] flex items-center justify-center shadow-lg hover:shadow-[#FD1D1D]/30 transform hover:scale-110 transition-all duration-300"
             aria-label="Instagram"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ffffff">

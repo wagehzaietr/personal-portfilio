@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
+
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -33,9 +34,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'Twitter', icon: '𝕏', href: '#' },
     { name: 'LinkedIn', icon: 'in', href: '#' },
-    { name: 'GitHub', icon: '♢', href: '#' },
     { name: 'Instagram', icon: '📸', href: 'https://www.instagram.com/wageh_zaetr?igsh=MWJ4eGMwNmx4bjZvbQ==' },
   ];
 
@@ -90,7 +89,7 @@ const Footer = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="Your name"
                   />
                 </motion.div>
@@ -104,7 +103,7 @@ const Footer = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="your.email@example.com"
                   />
                 </motion.div>
@@ -118,7 +117,7 @@ const Footer = () => {
                     onChange={handleChange}
                     required
                     rows="5"
-                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-accent resize-none"
+                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-accent resize-none"
                     placeholder="How can I help you?"
                   ></textarea>
                 </motion.div>
@@ -164,23 +163,7 @@ const Footer = () => {
               <motion.p variants={childVariants} className="text-gray-300 mb-8"><span className="font-medium text-accent">Location:</span> Damascus, Syria</motion.p>
             </div>
             
-            <div>
-              <motion.h3 variants={childVariants} className="text-2xl font-bold mb-4">Connect With Me</motion.h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    variants={childVariants}
-                    whileHover={{ y: -5, color: '#3b82f6' }}
-                    className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-white text-lg hover:border-accent transition-all duration-300"
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
+
             
             <motion.div variants={childVariants} className="mt-12">
               <a 

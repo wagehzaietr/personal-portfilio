@@ -105,7 +105,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <motion.div
-          className="fixed md:hidden inset-0 bg-primary/95 backdrop-blur-lg flex flex-col justify-center items-center"
+          className="fixed min-h-screen bg-black/55 md:hidden inset-0 bg-primary/95 backdrop-blur-lg flex flex-col justify-center items-center"
           initial={{ x: '100%' }}
           animate={menuOpen ? { x: 0 } : { x: '100%' }}
           transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
