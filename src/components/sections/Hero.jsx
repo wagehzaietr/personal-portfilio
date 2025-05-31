@@ -1,96 +1,191 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState, useCallback, memo } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import animationData from '../ui/Ai.json'
 
+// Separate background particles component for optimization
+const BackgroundParticles = memo(() => {
+  return (
+    <div className="absolute inset-0 z-0">
+      {[...Array(10)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-secondary/20"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            width: `${Math.random() * 8 + 2}px`,
+            height: `${Math.random() * 8 + 2}px`,
+          }}
+          animate={{
+            y: [0, Math.random() * 100 - 50],
+            opacity: [0.2, 0.8, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 15 + 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+});
+
+BackgroundParticles.displayName = 'BackgroundParticles';
+
+// Separate stars component for optimization
+const FallingStars = memo(({ count = 10, largeCount = 3 }) => {
+  return (
+    <>
+      {/* Small stars */}
+      {[...Array(count)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute bg-white z-10"
+          style={{
+            top: `${Math.random() * -10}%`,
+            left: `${Math.random() * 100}%`,
+            width: `${Math.random() * 2 + 1}px`,
+            height: `${Math.random() * 2 + 1}px`,
+            boxShadow: '0 0 4px 1px rgba(255, 255, 255, 0.7)',
+            opacity: Math.random() * 0.7 + 0.3,
+          }}
+          animate={{
+            top: '110%',
+            left: `${parseFloat(Math.random() * 20 - 10) + parseInt(i * 5)}%`,
+            opacity: [0.7, 0.9, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 15,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 10,
+          }}
+        />
+      ))}
+
+      {/* Larger stars */}
+      {[...Array(largeCount)].map((_, i) => (
+        <motion.div
+          key={i + 'large'}
+          className="absolute z-10"
+          style={{
+            top: `${Math.random() * -10}%`,
+            left: `${Math.random() * 100}%`,
+            opacity: Math.random() * 0.5 + 0.5,
+          }}
+          animate={{
+            top: '110%',
+            left: `${parseFloat(Math.random() * 20 - 10) + parseInt(i * 20)}%`,
+            opacity: [0.8, 1, 0.3],
+          }}
+          transition={{
+            duration: Math.random() * 8 + 10,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 5,
+          }}
+        >
+          <div className="h-1 w-1 bg-white rounded-full shadow-[0_0_5px_2px_rgba(255,255,255,0.9)]"></div>
+        </motion.div>
+      ))}
+    </>
+  );
+});
+
+FallingStars.displayName = 'FallingStars';
+
 const Hero = () => {
   const ref = useRef(null);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Text animation variants
+  // Detect device capabilities and user preferences
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    // Check if device is mobile
+    setIsMobile(window.innerWidth < 768);
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Text animation variants - simpler for mobile
   const heroTextVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.12,
+        staggerChildren: isMobile ? 0.06 : 0.12, // Faster stagger on mobile
       },
     },
   };
 
   const letterVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: isMobile ? 25 : 50 }, // Smaller distance on mobile
     visible: { 
       opacity: 1, 
       y: 0,
       transition: { 
         type: "spring", 
-        damping: 12
+        damping: isMobile ? 18 : 12 // More dampening on mobile for faster animation
       }
     },
   };
 
-  // Handle parallax effect on mouse move
+  // Handle parallax effect on mouse move - only on desktop
+  const handleMouseMove = useCallback((e) => {
+    if (!ref.current || isMobile) return;
+    
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    
+    const moveX = (clientX - innerWidth / 2) / 25;
+    const moveY = (clientY - innerHeight / 2) / 25;
+    
+    // Apply transform to elements with data attributes
+    const elements = ref.current.querySelectorAll('[data-parallax]');
+    elements.forEach(el => {
+      const speed = parseFloat(el.getAttribute('data-parallax'));
+      el.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
+    });
+  }, [isMobile]);
+  
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!ref.current) return;
-      
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      const moveX = (clientX - innerWidth / 2) / 25;
-      const moveY = (clientY - innerHeight / 2) / 25;
-      
-      // Apply transform to elements with data attributes
-      const elements = ref.current.querySelectorAll('[data-parallax]');
-      elements.forEach(el => {
-        const speed = parseFloat(el.getAttribute('data-parallax'));
-        el.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
-      });
-    };
+    if (isMobile || isReducedMotion) return; // Don't add listener on mobile
     
     window.addEventListener('mousemove', handleMouseMove);
-    
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [handleMouseMove, isMobile, isReducedMotion]);
 
   // Split text for animation
   const nameText = "Wageh Zaietr".split("");
 
   // Time-based greeting
-  const getGreeting = () => {
+  const getGreeting = useCallback(() => {
     const hours = new Date().getHours();
     if (hours < 12) return "Good Morning";
     if (hours < 18) return "Good Afternoon";
     return "Good Evening";
-  };
+  }, []);
+
+  // Determine number of stars based on device
+  const starCount = isMobile ? 5 : (isReducedMotion ? 0 : 15);
+  const largeStarCount = isMobile ? 2 : (isReducedMotion ? 0 : 5);
 
   return (
     <section id="home" ref={ref} className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      {/* Background particles */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-secondary/20"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 8 + 2}px`,
-              height: `${Math.random() * 8 + 2}px`,
-            }}
-            animate={{
-              y: [0, Math.random() * 100 - 50],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 15 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      {/* Background particles - reduced or removed based on device */}
+      {!isReducedMotion && <BackgroundParticles />}
 
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background z-10"></div>
@@ -126,18 +221,20 @@ const Hero = () => {
               ))}
             </motion.h1>
 
-            {/* Animated subtitle */}
+            {/* Animated subtitle - simplified for mobile */}
             <motion.div
               className="overflow-hidden h-16 my-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
+              transition={{ delay: 1, duration: 0.5 }}
             >
               <motion.h2
                 className="bg-clip-text text-transparent bg-gradient-to-r from-secondary via-purple-400 to-accent mb-8"
-                animate={{ y: [0, -120, -240, -360, -240, -120, 0] }}
+                animate={isReducedMotion ? {} : { 
+                  y: [0, -120, -240, -360, -240, -120, 0] 
+                }}
                 transition={{ 
-                  duration: 10, 
+                  duration: isMobile ? 15 : 10, // Slower on mobile for smoother animation
                   ease: "easeInOut", 
                   repeat: Infinity,
                   repeatType: "loop",
@@ -158,8 +255,8 @@ const Hero = () => {
               className="text-lg text-gray-300 mb-10 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
-              data-parallax="1.2"
+              transition={{ delay: 1.2, duration: 0.6 }}
+              data-parallax={isMobile ? "0" : "1.2"}
             >
               I craft high-performance, visually stunning digital experiences that engage users and drive business growth. Let's transform your vision into reality.
             </motion.p>
@@ -169,24 +266,20 @@ const Hero = () => {
               className="flex flex-wrap gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.6, duration: 0.6 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
             >
-              <motion.a 
+              <a 
                 href="#projects"
                 className="px-8 py-3 rounded-md bg-gradient-to-r from-secondary to-accent text-white font-medium hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:translate-y-[-2px]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
               >
                 View My Work
-              </motion.a>
-              <motion.a 
+              </a>
+              <a 
                 href="#contact"
                 className="px-8 py-3 rounded-md border border-gray-600 text-white font-medium hover:border-accent hover:text-accent transition-all duration-300 hover:translate-y-[-2px]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
               >
                 Get in Touch
-              </motion.a>
+              </a>
             </motion.div>
           </div>
           
@@ -197,63 +290,22 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <Lottie animationData={animationData} className="w-full max-w-md" />
+            <Lottie 
+              animationData={animationData} 
+              className="w-full max-w-md" 
+              rendererSettings={{
+                preserveAspectRatio: 'xMidYMid slice',
+                progressiveLoad: true,
+              }}
+            />
           </motion.div>
         </div>
       </div>
 
-      {/* Falling Stars */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute bg-white z-10"
-          style={{
-            top: `${Math.random() * -10}%`,
-            left: `${Math.random() * 100}%`,
-            width: `${Math.random() * 2 + 1}px`,
-            height: `${Math.random() * 2 + 1}px`,
-            boxShadow: '0 0 4px 1px rgba(255, 255, 255, 0.7)',
-            opacity: Math.random() * 0.7 + 0.3,
-          }}
-          animate={{
-            top: '110%',
-            left: `${parseFloat(Math.random() * 20 - 10) + parseInt(i * 5)}%`,
-            opacity: [0.7, 0.9, 0.2],
-          }}
-          transition={{
-            duration: Math.random() * 10 + 15,
-            repeat: Infinity,
-            ease: "linear",
-            delay: Math.random() * 10,
-          }}
-        />
-      ))}
-
-      {/* Larger stars (less frequent) */}
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i + 'large'}
-          className="absolute z-10"
-          style={{
-            top: `${Math.random() * -10}%`,
-            left: `${Math.random() * 100}%`,
-            opacity: Math.random() * 0.5 + 0.5,
-          }}
-          animate={{
-            top: '110%',
-            left: `${parseFloat(Math.random() * 20 - 10) + parseInt(i * 20)}%`,
-            opacity: [0.8, 1, 0.3],
-          }}
-          transition={{
-            duration: Math.random() * 8 + 10,
-            repeat: Infinity,
-            ease: "linear",
-            delay: Math.random() * 5,
-          }}
-        >
-          <div className="h-1 w-1 bg-white rounded-full shadow-[0_0_5px_2px_rgba(255,255,255,0.9)]"></div>
-        </motion.div>
-      ))}
+      {/* Falling Stars - conditionally rendered and quantity based on device */}
+      {!isReducedMotion && starCount > 0 && 
+        <FallingStars count={starCount} largeCount={largeStarCount} />
+      }
       
       {/* Scroll indicator */}
       <motion.div 
@@ -284,4 +336,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default memo(Hero); 
