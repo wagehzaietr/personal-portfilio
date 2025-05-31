@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const navItems = [
@@ -15,6 +15,16 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Force initial layout calculations before first render
+  useLayoutEffect(() => {
+    // Force layout recalculation
+    window.dispatchEvent(new Event('resize'));
+    
+    // Initial check for scroll position (in case page loads at a scrolled position)
+    const scrollPosition = window.scrollY;
+    setScrolled(scrollPosition > 50);
+  }, []);
 
   // Handle scroll effect
   useEffect(() => {
@@ -118,7 +128,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <motion.div
-          className="fixed min-h-screen bg-black/55 md:hidden inset-0 bg-primary/95 backdrop-blur-lg flex flex-col justify-center items-center"
+          className="fixed min-h-screen w-full bg-black/55 md:hidden inset-0 bg-primary/95 backdrop-blur-lg flex flex-col justify-center items-center overflow-hidden"
           initial={{ x: '100%' }}
           animate={menuOpen ? { x: 0 } : { x: '100%' }}
           transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
