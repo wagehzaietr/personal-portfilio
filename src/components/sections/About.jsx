@@ -9,8 +9,7 @@ const About = () => {
     { name: 'UI/UX Design', level: 88 },
     { name: 'Tailwind CSS', level: 94 },
     { name: 'TypeScript', level: 80 },
-    { name: 'Node.js', level: 75 },
-    { name: 'Figma', level: 85 },
+
   ];
 
   // Timeline data
