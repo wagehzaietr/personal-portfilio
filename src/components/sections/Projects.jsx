@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import {projectsData} from '../data/data';
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
@@ -11,63 +11,8 @@ const Projects = () => {
     { id: 'web', name: 'Web Development' },
   ];
 
-  // Project data
-  const projectsData = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=800&auto=format&fit=crop',
-      tags: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
-      description: 'A comprehensive e-commerce platform with advanced features like real-time filtering, cart functionality, and secure payment integration.',
-      link: '#'
-    },
-    {
-      id: 2,
-      title: 'Finance Dashboard UI',
-      category: 'design',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-      tags: ['Figma', 'UI Kit', 'Responsive Design'],
-      description: 'A modern finance dashboard design with intuitive navigation, data visualization, and dark/light mode themes.',
-      link: '#'
-    },
-    {
-      id: 3,
-      title: 'Fitness Tracking App',
-      category: 'app',
-      image: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=800&auto=format&fit=crop',
-      tags: ['React Native', 'Firebase', 'App Design'],
-      description: 'A mobile application for fitness enthusiasts to track workouts, set goals, and monitor progress with rich analytics.',
-      link: '#'
-    },
-    {
-      id: 4,
-      title: 'Portfolio Website',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?q=80&w=800&auto=format&fit=crop',
-      tags: ['React', 'Framer Motion', 'Tailwind CSS'],
-      description: 'A creative portfolio website for a digital artist with interactive animations and image galleries.',
-      link: '#'
-    },
-    {
-      id: 5,
-      title: 'Task Management UI',
-      category: 'design',
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800&auto=format&fit=crop',
-      tags: ['Figma', 'UI/UX', 'Wireframing'],
-      description: 'A clean and minimal task management application design focused on productivity and ease of use.',
-      link: '#'
-    },
-    {
-      id: 6,
-      title: 'Food Delivery App',
-      category: 'app',
-      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop',
-      tags: ['React Native', 'Firebase', 'Google Maps API'],
-      description: 'A food delivery application with real-time order tracking, restaurant discovery, and payment processing.',
-      link: '#'
-    },
-  ];
+ 
+  
 
   // Filter projects based on active category
   const filteredProjects = activeFilter === 'all' 
