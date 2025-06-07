@@ -27,13 +27,7 @@ const Services = () => {
       description: 'Cross-platform mobile apps built with React Native that work flawlessly on iOS and Android.',
       features: ['Native-like Experience', 'Performance Optimization', 'Offline Functionality', 'App Store Deployment']
     },
-    {
-      id: 4,
-      icon: '⚙️',
-      title: 'Backend Development',
-      description: 'Robust server-side solutions that power your applications with secure, scalable APIs.',
-      features: ['API Development', 'Database Design', 'Authentication & Security', 'Cloud Deployment']
-    },
+
   ];
 
   // Pricing plans

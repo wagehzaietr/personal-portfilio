@@ -33,7 +33,7 @@ export const projectsData = [
       image: '/project4.png',
       tags: ['React', 'Framer Motion', 'Tailwind CSS'],
       description: 'Joblife website made with react and tailwind css with framer motion for finding jobs and applying for them it just a landing page',
-      link: '#https://job-life.netlify.app'
+      link: 'https://job-life.netlify.app'
     },
     {
       id: 5,
