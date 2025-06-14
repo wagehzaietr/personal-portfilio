@@ -1,11 +1,12 @@
-import { useEffect } from 'react'
+import { lazy, useEffect } from 'react'
 import Layout from './components/layout/Layout'
 import Hero from './components/sections/Hero'
-import About from './components/sections/About'
 import Services from './components/sections/Services'
-import Projects from './components/sections/Projects'
 import Loader from './components/ui/Loader'
 import './App.css'
+
+const Projects = lazy(() => import('./components/sections/Projects'))
+const About = lazy(() => import('./components/sections/About'))
 
 function App() {
   // Handle scroll to top button visibility
