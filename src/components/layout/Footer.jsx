@@ -159,7 +159,7 @@ const Footer = () => {
             <div>
               <motion.h3 variants={childVariants} className="text-2xl font-bold mb-4">Contact Information</motion.h3>
               <motion.p variants={childVariants} className="text-gray-300 mb-2"><span className="font-medium text-accent">Email:</span> bad1game1@hotmail.com</motion.p>
-              <motion.p variants={childVariants} className="text-gray-300 mb-2"><span className="font-medium text-accent">Phone:</span> +963960902967</motion.p>
+              <motion.p variants={childVariants} className="text-gray-300 mb-2"><span className="font-medium text-accent">Phone:</span>/</motion.p>
               <motion.p variants={childVariants} className="text-gray-300 mb-8"><span className="font-medium text-accent">Location:</span> Damascus, Syria</motion.p>
             </div>
             
