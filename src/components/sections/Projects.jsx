@@ -86,7 +86,7 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence >
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}

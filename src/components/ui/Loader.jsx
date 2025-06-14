@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
-import loaderData from '../ui/loader.json'
+import loaderData from '../ui/loader1.json'
 
 const Loader = () => {
   const [fadeOut, setFadeOut] = useState(false);
