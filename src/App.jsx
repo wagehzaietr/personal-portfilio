@@ -1,12 +1,14 @@
 import { lazy, Suspense, useEffect } from 'react'
 import Layout from './components/layout/Layout'
-import Services from './components/sections/Services'
 import Loader from './components/ui/Loader'
 import './App.css'
 
+
+// Lazy-loaded components
 const Projects = lazy(() => import('./components/sections/Projects'))
 const About = lazy(() => import('./components/sections/About'))
 const Hero = lazy(() => import('./components/sections/Hero'))
+const Services = lazy(() => import('./components/sections/Services'))
 
 function App () {
   // Handle scroll to top button visibility
@@ -47,7 +49,7 @@ function App () {
     <>
       <Loader />
       <Layout>
-        <Suspense fallback={<Loader/>}>
+        <Suspense fallback={<Loader />}>
           <Hero />
           <About />
           <Services />

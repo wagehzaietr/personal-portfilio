@@ -1,6 +1,8 @@
+// src/components/sections/Projects.jsx
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {projectsData} from '../data/data';
+import { projectsData } from '../data/data';
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
@@ -10,9 +12,6 @@ const Projects = () => {
     { id: 'all', name: 'All' },
     { id: 'web', name: 'Web Development' },
   ];
-
- 
-  
 
   // Filter projects based on active category
   const filteredProjects = activeFilter === 'all' 
@@ -86,7 +85,7 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <AnimatePresence >
+          <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
@@ -237,4 +236,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
