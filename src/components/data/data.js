@@ -46,12 +46,12 @@ export const projectsData = [
     },
     {
       id: 6,
-      title: 'Food Delivery App',
+      title: 'Bgremover with Ai',
       category: 'web',
-      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop',
-      tags: ['React Native', 'Firebase', 'Google Maps API'],
-      description: 'A food delivery application with real-time order tracking, restaurant discovery, and payment processing.',
-      link: '#'
+      image: './project6.png',
+      tags: ['React', 'Clerk', 'Tilewind CSS', 'IMG.LYs'],
+      description: 'BG Remover is a web application that leverages IMG.LYs AI technology to automatically remove backgrounds from images. Built with Vite, React, Tailwind CSS, and IMG.LYs SDK, this tool provides a fast and efficient way to process images',
+      link: 'https://bgremoverwz.netlify.app'
     },
   ];
 
