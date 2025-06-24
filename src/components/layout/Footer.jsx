@@ -193,7 +193,6 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p>© {new Date().getFullYear()} Wageh Zaietr. All Rights Reserved.</p>
-          <p className="mt-1 text-sm">Designed & Developed with ❤️</p>
         </motion.div>
       </div>
     </footer>
