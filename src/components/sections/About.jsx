@@ -1,17 +1,37 @@
 import { motion } from 'framer-motion';
-
+import { FaHtml5, FaCss3Alt, FaJs, FaReact } from 'react-icons/fa';
+import { SiTailwindcss, SiTypescript, SiFigma } from 'react-icons/si';
 const About = () => {
   // Skills data with proficiency levels
-  const skills = [
-    { name: 'HTML/CSS', level: 95 },
-    { name: 'JavaScript', level: 90 },
-    { name: 'React', level: 92 },
-    { name: 'UI/UX Design', level: 88 },
-    { name: 'Tailwind CSS', level: 94 },
-    { name: 'TypeScript', level: 80 },
 
-  ];
-
+const size = 30
+const skills = [
+  {
+    name: 'HTML/CSS',
+    icon: [<FaHtml5 size={size} color="#E44D26" key="html" />, <FaCss3Alt size={size} color="#1572B6" key="css" />],
+    color: ['#E44D26', '#1572B6'],
+  },
+  {
+    name: 'JavaScript',
+    icon: <FaJs size={size} color="#F7DF1E" />,
+    color: '#F7DF1E',
+  },
+  {
+    name: 'React',
+    icon: <FaReact size={size} color="#61DAFB" />,
+    color: '#61DAFB',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: <SiTailwindcss size={size} color="#38B2AC" />,
+    color: '#38B2AC',
+  },
+  {
+    name: 'TypeScript',
+    icon: <SiTypescript size={size} color="#3178C6" />,
+    color: '#3178C6',
+  },
+];
   // Timeline data
   const timeline = [
     {
@@ -114,28 +134,17 @@ const About = () => {
           {/* Skills graph */}
           <motion.div
             className="bg-background/40 backdrop-blur-sm p-6 rounded-xl shadow-lg"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          
           >
             <h3 className="mb-6 text-center">Technical Skills</h3>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {skills.map((skill, index) => (
                 <div key={skill.name} className="relative">
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium">{skill.name}</span>
-                    <span className="text-sm font-medium text-accent">{skill.level}%</span>
+                    <span className=" text-1xl font-bold">{skill.name}</span> <span className="text-2xl ">{skill.icon}</span>
+                    
                   </div>
-                  <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-secondary to-accent"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.1 * index, ease: "easeOut" }}
-                    />
-                  </div>
+                 
                 </div>
               ))}
             </div>
