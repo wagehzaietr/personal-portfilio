@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, useCallback, memo } from 'react'
 import { motion } from 'framer-motion'
-
-// Separate background particles component for optimization
+import { Prism as SyntaxHighlighter  } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { codeString } from '../data/data'
 
 
 
@@ -10,13 +11,13 @@ const Hero = () => {
   const [isReducedMotion, setIsReducedMotion] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Detect device capabilities and user preferences
+
   useEffect(() => {
-    // Check for reduced motion preference
+
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     setIsReducedMotion(mediaQuery.matches)
 
-    // Check if device is mobile
+
     setIsMobile(window.innerWidth < 768)
 
     const handleResize = () => {
@@ -162,10 +163,9 @@ const Hero = () => {
                 }}
               >
                 <span className='block h-20 py-4'>Web Designer</span>
-                <span className='block h-20 py-4'>UI/UX Expert</span>
                 <span className='block h-20 py-4'>Frontend Developer</span>
-                <span className='block h-20 py-4'>Creative Thinker</span>
                 <span className='block h-20 py-4'>UI/UX Expert</span>
+                <span className='block h-20 py-4'>Creative Thinker</span>
                 <span className='block h-20 py-4'>Web Designer</span>
               </motion.h2>
             </motion.div>
@@ -206,12 +206,27 @@ const Hero = () => {
           </div>
 
           {/* Animation on the right side */}
-          <motion.div
-            className='mt-10 md:mt-0 md:ml-auto'
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          ></motion.div>
+    <div className="w-full mt-2 sm:px-6 md:px-8 max-w-full overflow-x-auto">
+      <motion.div
+        className="mt-6 rounded-lg"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+      >
+        <SyntaxHighlighter
+          language="javascript"
+          style={vscDarkPlus}
+          className="rounded-lg min-w-[300px]"
+          customStyle={{
+            fontSize: '0.85rem',
+            borderRadius: '0.5rem',
+            padding: '1rem',
+          }}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+      </motion.div>
+    </div>
         </div>
       </div>
 

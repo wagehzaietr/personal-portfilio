@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import Layout from './components/layout/Layout'
 import Loader from './components/ui/Loader'
 import './App.css'
+import ScrollToTop from './components/ui/ScrollToTop'
 
 
 // Lazy-loaded components
@@ -48,6 +49,7 @@ function App () {
   return (
     <>
       <Loader />
+      <ScrollToTop/>
       <Layout>
         <Suspense fallback={<Loader />}>
           <Hero />

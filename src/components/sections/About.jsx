@@ -117,7 +117,7 @@ const skills = [
             
             <motion.div variants={itemVariants} className="flex gap-6 mb-8">
               <div>
-                <h4 className="text-4xl font-bold text-accent mb-1">6+</h4>
+                <h4 className="text-4xl font-bold text-accent mb-1">3+</h4>
                 <p className="text-sm text-gray-400">Years Experience</p>
               </div>
               <div>
@@ -141,7 +141,7 @@ const skills = [
               {skills.map((skill, index) => (
                 <div key={skill.name} className="relative">
                   <div className="flex justify-between mb-2">
-                    <span className=" text-1xl font-bold">{skill.name}</span> <span className="text-2xl ">{skill.icon}</span>
+                    <span className=" text-1xl font-bold">{skill.name}</span> <span className="text-2xl bg-white/20 rounded-full p-2 ">{skill.icon}</span>
                     
                   </div>
                  

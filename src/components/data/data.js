@@ -48,13 +48,12 @@ export const projectsData = [
   },
   {
     id: 5,
-    title: 'Games selling website',
+    title: 'Modren ecommerce website',
     category: 'web',
-    image: '/project5.jpg',
+    image: '/project7.jpg',
     tags: ['React', 'UI/tailwind'],
-    description:
-      'games selling website idea clone with lazy loading and responsive design.',
-    link: 'https://enebac.netlify.app'
+    description:'Modern e-commerce site built with React, Vite, Tailwind, and i18n. Features dark mode, cart with localStorage, dynamic routes, and lazy loading for fast, responsive performance ',
+    link: 'https://modren-ecom.netlify.app'
   },
   {
     id: 6,
@@ -67,3 +66,23 @@ export const projectsData = [
     link: 'https://bgremoverwz.netlify.app'
   }
 ]
+
+
+export const codeString = `const aboutMe: DeveloperProfile = {
+  codename: "WagehZaiter",
+  origin: "🌍 Somewhere between open-source repos and clean design palettes",
+  role: "Creative Fullstack Developer",
+  stack: {
+    languages: ["JavaScript", "TypeScript", ],
+    frameworks: ["React", "Next.js", "TailwindCSS", "Node.js"],
+  },
+  traits: [
+    "UI/UX perfectionist",
+    "Code readability evangelist",
+    "Dark mode connoisseur",
+    "Terminal theme curator",
+  ],
+  missionStatement: 
+  "Building experiences where design meets functionality — one clean commit at a time.",
+  availability: "Open to opportunities 🚀"
+};`;
