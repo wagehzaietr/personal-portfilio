@@ -110,7 +110,7 @@ const Services = () => {
   <h3 className="font-semibold text-4xl md:text-6xl">Services & Pricing</h3>
   <svg
     viewBox="0 0 100 10"
-    className="mx-auto mt-3 h-12 w-[400px] text-indigo-500"
+    className="mx-auto mt-3 h-12 w-[300px] md:w-[400px] text-indigo-500"
     fill="none"
     stroke="currentColor"
     strokeWidth="2"

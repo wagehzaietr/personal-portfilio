@@ -112,7 +112,7 @@ const About = () => {
               <h3 className=' font-semibold text-4xl'>Technical Skills</h3>
               <svg
                 viewBox='0 0 100 10'
-                className='mx-auto mt-1 h-6 w-[200px] text-indigo-500'
+                className='mx-auto mt-1 h-6 w-[300px] text-indigo-500'
                 fill='none'
                 stroke='currentColor'
                 strokeWidth='2'
