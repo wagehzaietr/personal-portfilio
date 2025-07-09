@@ -1,202 +1,177 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { FaLinkedin, FaInstagram, FaArrowUp } from 'react-icons/fa'
+import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineUser } from 'react-icons/hi'
 
 const Footer = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call
+    e.preventDefault()
+    setIsSubmitting(true)
     setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
-  };
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setIsSubmitted(false), 4000)
+    }, 1500)
+  }
 
-  const socialLinks = [
-    { name: 'LinkedIn', icon: 'in', href: '#' },
-    { name: 'Instagram', icon: '📸', href: 'https://www.instagram.com/wageh_zaetr?igsh=MWJ4eGMwNmx4bjZvbQ==' },
-  ];
-
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.2 }
     }
-  };
+  }
 
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
-  };
+  }
 
   return (
-    <footer id="contact" className="bg-primary py-20">
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+    <footer id='contact' className='relative bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-24 px-4 text-white'>
+      <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start'>
+
+        {/* Contact Form */}
+        <motion.div
+          className='bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-xl'
+          variants={containerVariants}
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">Ready to start a project or just want to say hello? Get in touch with me using the form below.</p>
-        </motion.div>
+          <h3 className='text-3xl font-bold mb-6'>Get in Touch</h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="bg-background/30 backdrop-blur-md p-8 rounded-xl shadow-xl"
-          >
-            {!isSubmitted ? (
-              <form onSubmit={handleSubmit}>
-                <motion.div className="mb-6" variants={childVariants}>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+          {!isSubmitted ? (
+            <form onSubmit={handleSubmit} className='space-y-6'>
+              {/* Name */}
+              <motion.div variants={childVariants} className='relative'>
+                <label className='block mb-1 text-sm'>Name</label>
+                <div className='flex items-center bg-background/30 rounded-lg px-3 py-2 border border-gray-600'>
+                  <HiOutlineUser className='mr-2 text-accent' />
                   <input
-                    type="text"
-                    id="name"
-                    name="name"
+                    type='text'
+                    name='name'
+                    required
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="Your name"
+                    placeholder='Your Name'
+                    className='w-full bg-transparent text-white outline-none placeholder-gray-400'
                   />
-                </motion.div>
-                
-                <motion.div className="mb-6" variants={childVariants}>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                </div>
+              </motion.div>
+
+              {/* Email */}
+              <motion.div variants={childVariants} className='relative'>
+                <label className='block mb-1 text-sm'>Email</label>
+                <div className='flex items-center bg-background/30 rounded-lg px-3 py-2 border border-gray-600'>
+                  <HiOutlineMail className='mr-2 text-accent' />
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
+                    type='email'
+                    name='email'
+                    required
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="your.email@example.com"
+                    placeholder='you@example.com'
+                    className='w-full bg-transparent text-white outline-none placeholder-gray-400'
                   />
-                </motion.div>
-                
-                <motion.div className="mb-6" variants={childVariants}>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full bg-background/50 border border-gray-700 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-accent resize-none"
-                    placeholder="How can I help you?"
-                  ></textarea>
-                </motion.div>
-                
-                <motion.div variants={childVariants}>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`w-full bg-gradient-to-r from-secondary to-accent text-white py-3 px-6 rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:translate-y-[-2px]'}`}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                </motion.div>
-              </form>
-            ) : (
-              <motion.div 
-                className="text-center py-12"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4 }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                <p className="text-gray-300">Thank you for reaching out. I'll get back to you shortly.</p>
+                </div>
               </motion.div>
-            )}
-          </motion.div>
-          
-          {/* Contact Info & Social Media */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex flex-col justify-between"
-          >
-            <div>
-              <motion.h3 variants={childVariants} className="text-2xl font-bold mb-4">Contact Information</motion.h3>
-              <motion.p variants={childVariants} className="text-gray-300 mb-2"><span className="font-medium text-accent">Email:</span> bad1game1@hotmail.com</motion.p>
-              <motion.p variants={childVariants} className="text-gray-300 mb-2"><span className="font-medium text-accent">Phone:</span>/</motion.p>
-              <motion.p variants={childVariants} className="text-gray-300 mb-8"><span className="font-medium text-accent">Location:</span> Damascus, Syria</motion.p>
-            </div>
-            
 
-            
-            <motion.div variants={childVariants} className="mt-12">
-              <a 
-                href="#home"
-                className="group flex items-center text-gray-400 hover:text-accent transition-all duration-300"
-              >
-                <span className="mr-2">Back to top</span>
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 transform group-hover:-translate-y-1 transition-transform duration-300" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
+              {/* Message */}
+              <motion.div variants={childVariants} className='relative'>
+                <label className='block mb-1 text-sm'>Message</label>
+                <textarea
+                  name='message'
+                  required
+                  rows='5'
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder='Let’s collaborate...'
+                  className='w-full bg-background/30 text-white placeholder-gray-400 border border-gray-600 rounded-lg p-3 resize-none focus:outline-none'
+                />
+              </motion.div>
+
+              {/* Submit Button */}
+              <motion.div variants={childVariants}>
+                <button
+                  type='submit'
+                  disabled={isSubmitting}
+                  className={`w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-accent to-secondary hover:scale-[1.02] transition-all duration-300 ${isSubmitting && 'opacity-60 cursor-not-allowed'}`}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-              </a>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </motion.div>
+            </form>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className='text-center py-8'
+            >
+              <h4 className='text-2xl font-bold mb-2 text-accent'>Message Sent!</h4>
+              <p className='text-gray-300'>Thanks for reaching out. I'll be in touch soon.</p>
             </motion.div>
-          </motion.div>
-        </div>
-        
-        <motion.div 
-          className="mt-20 pt-8 border-t border-gray-800 text-center text-gray-400"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          )}
+        </motion.div>
+
+        {/* Info Section */}
+        <motion.div
+          className='flex flex-col justify-between h-full'
+          variants={containerVariants}
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
         >
-          <p>© {new Date().getFullYear()} Wageh Zaietr. All Rights Reserved.</p>
+          <motion.div variants={childVariants}>
+            <h3 className='text-3xl font-bold mb-6'>Contact Info</h3>
+            <p className='mb-4 text-gray-300'>
+              <span className='text-accent font-medium'>Email:</span> bad1game1@hotmail.com
+            </p>
+            <p className='mb-4 text-gray-300'>
+              <span className='text-accent font-medium'>Location:</span> Damascus, Syria
+            </p>
+          </motion.div>
+
+          <motion.div className='flex gap-6 mt-8' variants={childVariants}>
+            <a href='https://www.linkedin.com/' target='_blank' rel='noreferrer' className='hover:text-accent transition'>
+              <FaLinkedin size={24} />
+            </a>
+          </motion.div>
+
+          <motion.div className='mt-12' variants={childVariants}>
+            <a
+              href='#home'
+              className='inline-flex items-center text-accent hover:text-white transition group'
+            >
+              <span className='mr-2'>Back to top</span>
+              <FaArrowUp className='transform group-hover:-translate-y-1 transition-transform duration-300' />
+            </a>
+          </motion.div>
         </motion.div>
       </div>
-    </footer>
-  );
-};
 
-export default Footer; 
+      {/* Bottom Credit */}
+      <motion.div
+        className='text-center mt-20 border-t border-white/10 pt-6 text-sm text-gray-500'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        &copy; {new Date().getFullYear()} Wageh Zaietr. Crafted with care.
+      </motion.div>
+    </footer>
+  )
+}
+
+export default Footer
