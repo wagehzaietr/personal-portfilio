@@ -11,6 +11,7 @@ const Projects = () => {
   const categories = [
     { id: 'all', name: 'All' },
     { id: 'web', name: 'Web Development' },
+    { id: 'Web Apps', name: 'Web Apps' },
   ];
 
   // Filter projects based on active category
@@ -53,7 +54,18 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-4">My Projects</h2>
+          <div className="text-center mb-6 text-4xl">
+  <h3 className="font-semibold text-4xl md:text-6xl">My Projects</h3>
+  <svg
+    viewBox="0 0 100 10"
+    className="mx-auto mt-3 h-10 w-[300px] text-indigo-500"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M0,5 Q25,0 50,5 T100,5" />
+  </svg>
+</div>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             A collection of my recent work, showcasing my skills in web development, UI/UX design, and application development.
           </p>

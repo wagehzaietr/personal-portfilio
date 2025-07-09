@@ -2,7 +2,7 @@ export const projectsData = [
   {
     id: 1,
     title: 'RapidQr',
-    category: 'web',
+    category: 'Web Apps',
     image: '/project1.jpg',
     tags: ['React', 'Tailwind CSS'],
     description:
@@ -12,7 +12,7 @@ export const projectsData = [
   {
     id: 2,
     title: 'Pixelgramm Social Platform',
-    category: 'Full Stack Development',
+    category: 'Web Apps',
     image:
       '/project2.jpg',
     tags: [
@@ -58,20 +58,31 @@ export const projectsData = [
   {
     id: 6,
     title: 'Bgremover with Ai',
-    category: 'web',
+    category: 'Web Apps',
     image: './project6.jpg',
     tags: ['React', 'Clerk', 'Tilewind CSS', 'IMG.LYs'],
     description:
       'BG Remover is a web application that leverages IMG.LYs AI technology to automatically remove backgrounds from images. Built with Vite, React, Tailwind CSS, and IMG.LYs SDK, this tool provides a fast and efficient way to process images',
     link: 'https://bgremoverwz.netlify.app'
-  }
+  },
+{
+  id: 7,
+  title: 'Voice Notes App',
+  category: 'Web Apps',
+  image: './project8.jpg',
+  tags: ['React', 'Javascript', 'Tailwind CSS', 'Recorder API'],
+  description:
+    'A modern voice note-taking app with dark/light mode, built using React and the Recorder API. Users can record, save, and manage voice memos directly in the browser.',
+  link: 'https://voicenotes-wz.netlify.app'
+}
+
 ]
 
 
 export const codeString = `const aboutMe: DeveloperProfile = {
   codename: "WagehZaiter",
   origin: "🌍 Somewhere between open-source repos and clean design palettes",
-  role: "Creative Fullstack Developer",
+  role: "Creative Developer",
   stack: {
     languages: ["JavaScript", "TypeScript", ],
     frameworks: ["React", "Next.js", "TailwindCSS", "Node.js"],
@@ -85,4 +96,41 @@ export const codeString = `const aboutMe: DeveloperProfile = {
   missionStatement: 
   "Building experiences where design meets functionality — one clean commit at a time.",
   availability: "Open to opportunities 🚀"
+};`;
+
+export const timeline = [
+    {
+      year: '2023',
+      title: 'Sr. Frontend Developer',
+      company: 'Tech Innovators Inc.',
+      description: 'Led the frontend team in developing cutting-edge web applications using React and modern web technologies.'
+    },
+    {
+      year: '2021',
+      title: 'UI/UX Designer & Developer',
+      company: 'Creative Digital Agency',
+      description: 'Created engaging user experiences and implemented frontend solutions for various clients across industries.'
+    },
+    {
+      year: '2019',
+      title: 'Frontend Developer',
+      company: 'Web Solutions Co.',
+      description: 'Built responsive and interactive web interfaces for e-commerce and SaaS platforms.'
+    },
+    {
+      year: '2017',
+      title: 'Junior Web Developer',
+      company: 'StartUp Ventures',
+      description: 'Developed and maintained websites and web applications for early-stage startups.'
+    },
+  ];
+
+  export const skill = `const My Skills = {
+    frontend: [
+      { name: 'HTML', level: 'Proficient' },
+      { name: 'CSS', level: 'Proficient' },
+      { name: 'JavaScript', level: 'Proficient' },
+      { name: 'React', level: 'Proficient' },
+      { name: 'Tailwind CSS', level: 'Proficient' },
+      { name: 'Git', level: 'Proficient' },
 };`;

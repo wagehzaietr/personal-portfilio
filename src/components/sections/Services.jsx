@@ -106,7 +106,18 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-4">Services & Pricing</h2>
+          <div className="text-center mb-6 text-4xl">
+  <h3 className="font-semibold text-4xl md:text-6xl">Services & Pricing</h3>
+  <svg
+    viewBox="0 0 100 10"
+    className="mx-auto mt-3 h-12 w-[400px] text-indigo-500"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M0,5 Q25,0 50,5 T100,5" />
+  </svg>
+</div>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             I offer a range of services to help bring your digital vision to life, with transparent pricing and exceptional value.
           </p>
