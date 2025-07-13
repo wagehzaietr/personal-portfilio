@@ -74,8 +74,27 @@ export const projectsData = [
   description:
     'A modern voice note-taking app with dark/light mode, built using React and the Recorder API. Users can record, save, and manage voice memos directly in the browser.',
   link: 'https://voicenotes-wz.netlify.app'
-}
-
+},
+{
+  id: 8,
+  title: 'car rent damas',
+  category: 'Web Apps',
+  image: './project9.jpg',
+  tags: ['React', 'Javascript', 'Tailwind CSS', 'google maps'],
+  description:
+    'a modren car rent website built with react and tailwind css and google maps api based in syria',
+  link: 'https://carrent-damas.netlify.app'
+},
+{
+  id: 9,
+  title: 'Modern Gym Management Dashboard',
+  category: 'Web Apps',
+  image: './project9.jpg',
+  tags: ['React', 'Javascript', 'Tailwind CSS', 'SupaBase', 'clerk'],
+  description:
+    'A sleek, multilingual dashboard for managing gym members, trainers, schedules, and reports. Built with React, Supabase, Clerk, and Tailwind CSS for a clean and responsive UI.',
+  link: 'https://gympro-dashboard.netlify.app'
+},
 ]
 
 
