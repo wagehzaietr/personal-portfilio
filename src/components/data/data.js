@@ -78,7 +78,7 @@ export const projectsData = [
 {
   id: 8,
   title: 'car rent damas',
-  category: 'Web Apps',
+  category: 'web',
   image: './project9.jpg',
   tags: ['React', 'Javascript', 'Tailwind CSS', 'google maps'],
   description:
@@ -88,8 +88,8 @@ export const projectsData = [
 {
   id: 9,
   title: 'Modern Gym Management Dashboard',
-  category: 'Web Apps',
-  image: './project9.jpg',
+  category: 'web',
+  image: './project10.jpg',
   tags: ['React', 'Javascript', 'Tailwind CSS', 'SupaBase', 'clerk'],
   description:
     'A sleek, multilingual dashboard for managing gym members, trainers, schedules, and reports. Built with React, Supabase, Clerk, and Tailwind CSS for a clean and responsive UI.',
