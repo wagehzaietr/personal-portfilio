@@ -51,7 +51,7 @@ export const projectsData = [
     title: 'Modren ecommerce website',
     category: 'web',
     image: '/project7.jpg',
-    tags: ['React', 'UI/tailwind'],
+    tags: ['React', 'UI/tailwind','i18next'],
     description:'Modern e-commerce site built with React, Vite, Tailwind, and i18n. Features dark mode, cart with localStorage, dynamic routes, and lazy loading for fast, responsive performance ',
     link: 'https://modren-ecom.netlify.app'
   },
@@ -80,7 +80,7 @@ export const projectsData = [
   title: 'car rent damas',
   category: 'web',
   image: './project9.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS', 'google maps'],
+  tags: ['React', 'Javascript', 'Tailwind CSS', 'google maps','i18next'],
   description:
     'a modren car rent website built with react and tailwind css and google maps api based in syria',
   link: 'https://carrent-damas.netlify.app'
@@ -90,10 +90,20 @@ export const projectsData = [
   title: 'Modern Gym Management Dashboard',
   category: 'web',
   image: './project10.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS', 'SupaBase', 'clerk'],
+  tags: ['React', 'Javascript', 'Tailwind CSS', 'SupaBase', 'clerk','i18next'],
   description:
     'A sleek, multilingual dashboard for managing gym members, trainers, schedules, and reports. Built with React, Supabase, Clerk, and Tailwind CSS for a clean and responsive UI.',
   link: 'https://gympro-dashboard.netlify.app'
+},
+{
+  id: 10,
+  title: 'bayt-dimashq',
+  category: 'web',
+  image: './project11.jpg',
+  tags: ['React', 'Javascript', 'Tailwind CSS', 'Arabic', 'English' ,'i18next'],
+  description:
+    'A modern, responsive landing page for Bayt Dimashq, an authentic Syrian restaurant in Dubai. Built with React, Vite, and Tailwind CSS, featuring bilingual support (English/Arabic) and optimized for performance and SEO.',
+  link: 'bayt-dimashq.netlify.app'
 },
 ]
 
