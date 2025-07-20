@@ -103,7 +103,27 @@ export const projectsData = [
   tags: ['React', 'Javascript', 'Tailwind CSS', 'Arabic', 'English' ,'i18next'],
   description:
     'A modern, responsive landing page for Bayt Dimashq, an authentic Syrian restaurant in Dubai. Built with React, Vite, and Tailwind CSS, featuring bilingual support (English/Arabic) and optimized for performance and SEO.',
-  link: 'bayt-dimashq.netlify.app'
+  link: 'https://bayt-dimashq.netlify.app'
+},
+{
+  id: 11,
+  title: 'QUWA-قوة',
+  category: 'Web Apps',
+  image: './project12.jpg',
+  tags: ['React', 'Javascript', 'Tailwind CSS','Arabic'],
+  description:
+    'an app i made because i love gym and working out i always find it hard counting syrian food dishes so i made this app to count our syrian food calories',
+  link: 'https://quwa.netlify.app'
+},
+{
+  id: 12,
+  title: 'sham-deals شام ديلز',
+  category: 'Web Apps',
+  image: './project13.jpg',
+  tags: ['React', 'Javascript', 'Tailwind CSS','i18next','supabase', 'Auth System'],
+  description:
+    'Sham Deals is a modern web application designed for buying and selling properties, vehicles, electronics, furniture, pet services, and general services, primarily targeting syrian-people users. It’s built using React with Tailwind CSS and supabase for the backend.',
+  link: 'https://sham-deals.netlify.app'
 },
 ]
 
