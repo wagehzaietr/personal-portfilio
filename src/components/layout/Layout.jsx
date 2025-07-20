@@ -1,5 +1,4 @@
 import Header from './Header';
-import Footer from './Footer';
 import FloatingSocial from '../ui/FloatingSocial';
 
 const Layout = ({ children }) => {
@@ -10,7 +9,6 @@ const Layout = ({ children }) => {
       <main className="flex-grow">
         {children}
       </main>
-      <Footer />
     </div>
   );
 };

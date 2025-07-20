@@ -1,61 +1,30 @@
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Loader from './components/ui/Loader'
-import './App.css'
 import ScrollToTop from './components/ui/ScrollToTop'
-
+import ScrollRestoration from './components/ui/ScrollRestoration'
+import './App.css'
+import Contact from './components/pages/Contact'
 
 // Lazy-loaded components
-const Projects = lazy(() => import('./components/sections/Projects'))
-const About = lazy(() => import('./components/sections/About'))
-const Hero = lazy(() => import('./components/sections/Hero'))
-const Services = lazy(() => import('./components/sections/Services'))
+const ProjectDetail = lazy(() => import('./components/pages/ProjectDetail'))
+const HomePage = lazy(() => import('./components/pages/HomePage'))
 
 function App () {
-  // Handle scroll to top button visibility
-  useEffect(() => {
-    const scrollToSection = e => {
-      e.preventDefault()
-      const href = e.currentTarget.getAttribute('href')
-      if (!href || !href.startsWith('#')) return
-
-      const targetId = href.substring(1)
-      const targetElement = document.getElementById(targetId)
-
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: 'smooth'
-        })
-      }
-    }
-
-    const handleLinks = () => {
-      const anchorLinks = document.querySelectorAll('a[href^="#"]')
-      anchorLinks.forEach(link => {
-        link.addEventListener('click', scrollToSection)
-      })
-
-      return () => {
-        anchorLinks.forEach(link => {
-          link.removeEventListener('click', scrollToSection)
-        })
-      }
-    }
-
-    return handleLinks()
-  }, [])
 
   return (
     <>
       <Loader />
+      <ScrollRestoration />
       <ScrollToTop/>
       <Layout>
         <Suspense fallback={<Loader />}>
-          <Hero />
-          <About />
-          <Services />
-          <Projects />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </Suspense>
       </Layout>
     </>

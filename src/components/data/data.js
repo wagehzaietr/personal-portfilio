@@ -1,132 +1,101 @@
 export const projectsData = [
   {
     id: 1,
-    title: 'RapidQr',
     category: 'Web Apps',
     image: '/project1.jpg',
     tags: ['React', 'Tailwind CSS'],
-    description:
-      'i was looking to make a qr code generator and this is what i came up with used react and tailwind css',
+    technologies: ['React.js', 'Tailwind CSS', 'QR Code Library', 'Responsive Design'],
     link: 'https://rapidqcode.netlify.app'
   },
   {
     id: 2,
-    title: 'Pixelgramm Social Platform',
     category: 'Web Apps',
-    image:
-      '/project2.jpg',
-    tags: [
-      'React.js',
-      'Tailwind CSS',
-      'Supabase Database',
-      'Clerk Authentication',
-      'Netlify Hosting'
-    ],
-    description:
-      'Modern social media application mimicking core Instagram features. Implemented JWT authentication via Clerk, real-time post feeds using Supabase queries, and responsive design patterns with Tailwind CSS. Demonstrates full-stack capabilities with 95% Lighthouse performance score.',
+    image: '/project2.jpg',
+    tags: ['React.js', 'Tailwind CSS', 'Supabase Database', 'Clerk Authentication', 'Netlify Hosting'],
+    technologies: ['React.js', 'Supabase', 'Clerk Auth', 'Tailwind CSS', 'Netlify'],
     link: 'https://pixelgramm.netlify.app'
   },
   {
     id: 3,
-    title: 'Almahairi Fragrances Selling Website',
     category: 'web',
     image: '/project3.jpg',
-    tags: ['React ', 'Supabase', 'App Design'],
-    description:
-      'Discover our exclusive collection of handcrafted perfumes, where artistry meets sophistication in every bottle made this one with love added arabic and english lazy loading seo friendly',
+    tags: ['React', 'Supabase', 'App Design'],
+    technologies: ['React.js', 'Supabase', 'Responsive Design', 'SEO Optimization'],
     link: 'https://almahairi.netlify.app'
   },
   {
     id: 4,
-    title: 'Joblife website',
     category: 'web',
     image: '/project4.jpg',
     tags: ['React', 'Framer Motion', 'Tailwind CSS'],
-    description:
-      'Joblife website made with react and tailwind css with framer motion for finding jobs and applying for them it just a landing page',
+    technologies: ['React.js', 'Framer Motion', 'Tailwind CSS'],
     link: 'https://job-life.netlify.app'
   },
   {
     id: 5,
-    title: 'Modren ecommerce website',
     category: 'web',
     image: '/project7.jpg',
-    tags: ['React', 'UI/tailwind','i18next'],
-    description:'Modern e-commerce site built with React, Vite, Tailwind, and i18n. Features dark mode, cart with localStorage, dynamic routes, and lazy loading for fast, responsive performance ',
+    tags: ['React', 'UI/tailwind', 'i18next'],
+    technologies: ['React.js', 'Vite', 'Tailwind CSS', 'i18next'],
     link: 'https://modren-ecom.netlify.app'
   },
   {
     id: 6,
-    title: 'Bgremover with Ai',
     category: 'Web Apps',
-    image: './project6.jpg',
-    tags: ['React', 'Clerk', 'Tilewind CSS', 'IMG.LYs'],
-    description:
-      'BG Remover is a web application that leverages IMG.LYs AI technology to automatically remove backgrounds from images. Built with Vite, React, Tailwind CSS, and IMG.LYs SDK, this tool provides a fast and efficient way to process images',
+    image: '/project6.jpg',
+    tags: ['React', 'Clerk', 'Tailwind CSS', 'IMG.LYs'],
+    technologies: ['React.js', 'Vite', 'Tailwind CSS', 'IMG.LYs SDK'],
     link: 'https://bgremoverwz.netlify.app'
   },
-{
-  id: 7,
-  title: 'Voice Notes App',
-  category: 'Web Apps',
-  image: './project8.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS', 'Recorder API'],
-  description:
-    'A modern voice note-taking app with dark/light mode, built using React and the Recorder API. Users can record, save, and manage voice memos directly in the browser.',
-  link: 'https://voicenotes-wz.netlify.app'
-},
-{
-  id: 8,
-  title: 'car rent damas',
-  category: 'web',
-  image: './project9.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS', 'google maps','i18next'],
-  description:
-    'a modren car rent website built with react and tailwind css and google maps api based in syria',
-  link: 'https://carrent-damas.netlify.app'
-},
-{
-  id: 9,
-  title: 'Modern Gym Management Dashboard',
-  category: 'web',
-  image: './project10.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS', 'SupaBase', 'clerk','i18next'],
-  description:
-    'A sleek, multilingual dashboard for managing gym members, trainers, schedules, and reports. Built with React, Supabase, Clerk, and Tailwind CSS for a clean and responsive UI.',
-  link: 'https://gympro-dashboard.netlify.app'
-},
-{
-  id: 10,
-  title: 'bayt-dimashq',
-  category: 'web',
-  image: './project11.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS', 'Arabic', 'English' ,'i18next'],
-  description:
-    'A modern, responsive landing page for Bayt Dimashq, an authentic Syrian restaurant in Dubai. Built with React, Vite, and Tailwind CSS, featuring bilingual support (English/Arabic) and optimized for performance and SEO.',
-  link: 'https://bayt-dimashq.netlify.app'
-},
-{
-  id: 11,
-  title: 'QUWA-قوة',
-  category: 'Web Apps',
-  image: './project12.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS','Arabic'],
-  description:
-    'an app i made because i love gym and working out i always find it hard counting syrian food dishes so i made this app to count our syrian food calories',
-  link: 'https://quwa.netlify.app'
-},
-{
-  id: 12,
-  title: 'sham-deals شام ديلز',
-  category: 'Web Apps',
-  image: './project13.jpg',
-  tags: ['React', 'Javascript', 'Tailwind CSS','i18next','supabase', 'Auth System'],
-  description:
-    'Sham Deals is a modern web application designed for buying and selling properties, vehicles, electronics, furniture, pet services, and general services, primarily targeting syrian-people users. It’s built using React with Tailwind CSS and supabase for the backend.',
-  link: 'https://sham-deals.netlify.app'
-},
+  {
+    id: 7,
+    category: 'Web Apps',
+    image: '/project8.jpg',
+    tags: ['React', 'Javascript', 'Tailwind CSS', 'Recorder API'],
+    technologies: ['React.js', 'Recorder API', 'Tailwind CSS', 'Local Storage'],
+    link: 'https://voicenotes-wz.netlify.app'
+  },
+  {
+    id: 8,
+    category: 'web',
+    image: '/project9.jpg',
+    tags: ['React', 'Javascript', 'Tailwind CSS', 'Google Maps', 'i18next'],
+    technologies: ['React.js', 'Tailwind CSS', 'Google Maps API', 'i18next'],
+    link: 'https://carrent-damas.netlify.app'
+  },
+  {
+    id: 9,
+    category: 'web',
+    image: '/project10.jpg',
+    tags: ['React', 'Javascript', 'Tailwind CSS', 'Supabase', 'Clerk', 'i18next'],
+    technologies: ['React.js', 'Supabase', 'Clerk', 'Tailwind CSS', 'i18next'],
+    link: 'https://gympro-dashboard.netlify.app'
+  },
+  {
+    id: 10,
+    category: 'web',
+    image: '/project11.jpg',
+    tags: ['React', 'Javascript', 'Tailwind CSS', 'Arabic', 'English', 'i18next'],
+    technologies: ['React.js', 'Vite', 'Tailwind CSS', 'i18next', 'SEO'],
+    link: 'https://bayt-dimashq.netlify.app'
+  },
+  {
+    id: 11,
+    category: 'Web Apps',
+    image: '/project12.jpg',
+    tags: ['React', 'Javascript', 'Tailwind CSS', 'Arabic'],
+    technologies: ['React.js', 'Tailwind CSS', 'Local Storage', 'Arabic Support'],
+    link: 'https://quwa.netlify.app'
+  },
+  {
+    id: 12,
+    category: 'Web Apps',
+    image: '/project13.jpg',
+    tags: ['React', 'Javascript', 'Tailwind CSS', 'i18next', 'Supabase', 'Auth System'],
+    technologies: ['React.js', 'Tailwind CSS', 'Supabase', 'i18next', 'Authentication'],
+    link: 'https://sham-deals.netlify.app'
+  }
 ]
-
 
 export const codeString = `const aboutMe: DeveloperProfile = {
   codename: "WagehZaiter",

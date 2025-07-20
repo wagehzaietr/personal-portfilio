@@ -245,26 +245,7 @@ const Services = () => {
           </motion.div>
         )}
 
-        {/* Call to action */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <p className="text-lg text-gray-300 mb-6">
-            Need a custom solution? Let's discuss your specific requirements.
-          </p>
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-block px-8 py-3 rounded-md bg-gradient-to-r from-secondary to-accent text-white font-medium hover:shadow-lg hover:shadow-accent/20 transition-all duration-300"
-          >
-            Get a Custom Quote
-          </motion.a>
-        </motion.div>
+
       </div>
     </section>
   );

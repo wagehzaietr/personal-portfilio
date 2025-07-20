@@ -1,0 +1,87 @@
+{
+  "projects": {
+    "1": {
+      "title": "RapidQr",
+      "description": "i was looking to make a qr code generator and this is what i came up with used react and tailwind css",
+      "detailedDescription": "RapidQr is a fast and efficient QR code generator built with React and styled with Tailwind CSS. The application allows users to quickly generate QR codes for various types of content including URLs, text, email addresses, and more. Features include real-time preview, customizable styling options, and instant download functionality.",
+      "features": [
+        "Real-time QR generation",
+        "Multiple content types", 
+        "Customizable styling",
+        "Instant download"
+      ]
+    },
+    "2": {
+      "title": "Pixelgramm Social Platform",
+      "description": "Modern social media application mimicking core Instagram features. Implemented JWT authentication via Clerk, real-time post feeds using Supabase queries, and responsive design patterns with Tailwind CSS. Demonstrates full-stack capabilities with 95% Lighthouse performance score.",
+      "detailedDescription": "Pixelgramm is a comprehensive social media platform that replicates the core functionality of Instagram. Built with modern web technologies, it features user authentication, photo sharing, real-time feeds, likes, comments, and user profiles. The application demonstrates full-stack development skills with a focus on performance and user experience.",
+      "features": [
+        "User Authentication",
+        "Photo Sharing", 
+        "Real-time Feed",
+        "Social Interactions",
+        "Responsive Design"
+      ]
+    },
+    "3": {
+      "title": "Almahairi Fragrances Selling Website",
+      "description": "Discover our exclusive collection of handcrafted perfumes, where artistry meets sophistication in every bottle made this one with love added arabic and english lazy loading seo friendly",
+      "detailedDescription": "Almahairi Fragrances is an elegant e-commerce platform showcasing handcrafted perfumes. Built with React and Supabase, it features bilingual support, lazy loading for optimal performance, and SEO optimization. The design emphasizes luxury and sophistication while maintaining excellent user experience.",
+      "features": [
+        "Bilingual Support",
+        "E-commerce Functionality",
+        "Lazy Loading", 
+        "SEO Optimized",
+        "Luxury Design"
+      ]
+    },
+    "4": {
+      "title": "Joblife website",
+      "description": "Joblife website made with react and tailwind css with framer motion for finding jobs and applying for them it just a landing page"
+    },
+    "5": {
+      "title": "Modern ecommerce website",
+      "description": "Modern e-commerce site built with React, Vite, Tailwind, and i18n. Features dark mode, cart with localStorage, dynamic routes, and lazy loading for fast, responsive performance"
+    },
+    "6": {
+      "title": "Bgremover with Ai",
+      "description": "BG Remover is a web application that leverages IMG.LYs AI technology to automatically remove backgrounds from images. Built with Vite, React, Tailwind CSS, and IMG.LYs SDK, this tool provides a fast and efficient way to process images"
+    },
+    "7": {
+      "title": "Voice Notes App",
+      "description": "A modern voice note-taking app with dark/light mode, built using React and the Recorder API. Users can record, save, and manage voice memos directly in the browser."
+    },
+    "8": {
+      "title": "Car Rent Damas",
+      "description": "a modern car rent website built with react and tailwind css and google maps api based in syria"
+    },
+    "9": {
+      "title": "Modern Gym Management Dashboard",
+      "description": "A sleek, multilingual dashboard for managing gym members, trainers, schedules, and reports. Built with React, Supabase, Clerk, and Tailwind CSS for a clean and responsive UI."
+    },
+    "10": {
+      "title": "Bayt Dimashq",
+      "description": "A modern, responsive landing page for Bayt Dimashq, an authentic Syrian restaurant in Dubai. Built with React, Vite, and Tailwind CSS, featuring bilingual support (English/Arabic) and optimized for performance and SEO."
+    },
+    "11": {
+      "title": "QUWA-قوة",
+      "description": "an app i made because i love gym and working out i always find it hard counting syrian food dishes so i made this app to count our syrian food calories"
+    },
+    "12": {
+      "title": "Sham Deals شام ديلز",
+      "description": "Sham Deals is a modern web application designed for buying and selling properties, vehicles, electronics, furniture, pet services, and general services, primarily targeting syrian-people users. It's built using React with Tailwind CSS and supabase for the backend."
+    }
+  },
+  "ui": {
+    "overview": "Overview",
+    "keyFeatures": "Key Features",
+    "technologiesUsed": "Technologies Used",
+    "projectLinks": "Project Links",
+    "viewLiveSite": "View Live Site",
+    "projectDetails": "Project Details",
+    "category": "Category:",
+    "technologies": "Technologies:",
+    "otherProjects": "Other Projects",
+    "back": "Back"
+  }
+}
