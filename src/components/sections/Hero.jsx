@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { codeString } from '../data/data'
+import { Link } from 'react-router-dom'
 
 const useDeviceSettings = () => {
   const [isReducedMotion, setReducedMotion] = useState(false)
@@ -182,12 +183,12 @@ const Hero = () => {
               >
                 View My Work
               </a>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="px-8 py-3 rounded-md border border-gray-600 text-white font-medium hover:border-accent hover:text-accent transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Get in Touch
-              </a>
+              </Link>
             </motion.div>
           </div>
 

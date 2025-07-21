@@ -72,7 +72,7 @@ const About = () => {
 
             <motion.p variants={itemVariants} className='text-gray-300 mb-6'>
               I'm Wageh Zaietr, a seasoned frontend developer and UI/UX designer
-              with over 6 years of experience creating beautiful, functional
+              with over 2 years of experience creating beautiful, functional
               digital experiences that users love.
             </motion.p>
 
@@ -107,18 +107,10 @@ const About = () => {
           </motion.div>
 
           {/* Skills graph */}
-          <motion.div className='bg-background/40 backdrop-blur-sm p-6 rounded-xl shadow-lg'>
+          <motion.div className='bg-background/40 ml-6 backdrop-blur-sm p-3 rounded-xl shadow-lg'>
             <div className='text-center mb-6 text-4xl'>
-              <h3 className=' font-semibold text-4xl'>Technical Skills</h3>
-              <svg
-                viewBox='0 0 100 10'
-                className='mx-auto mt-1 h-6 w-[300px] text-indigo-500'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-              >
-                <path d='M0,5 Q25,0 50,5 T100,5' />
-              </svg>
+
+              
             </div>
 
             <div className='space-y-4'>
