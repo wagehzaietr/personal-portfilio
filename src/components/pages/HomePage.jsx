@@ -6,12 +6,12 @@ import Projects from '../sections/Projects'
 
 const HomePage = () => {
   return (
-    <>
+    <main>
       <Hero />
       <About />
       <Services />
       <Projects />
-    </>
+    </main>
   )
 }
 

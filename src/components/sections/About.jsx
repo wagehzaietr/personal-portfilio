@@ -75,6 +75,7 @@ const About = () => {
               with over 2 years of experience creating beautiful, functional
               digital experiences that users love.
             </motion.p>
+            
 
             <motion.p variants={itemVariants} className='text-gray-300 mb-6'>
               My approach combines technical expertise with creative thinking,

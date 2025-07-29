@@ -88,7 +88,7 @@ const Hero = () => {
   const letterVariants = getLetterVariants(isMobile)
 
   return (
-    <section
+    <main
       id="home"
       ref={ref}
       className="relative min-h-screen flex items-center pt-24 overflow-hidden"
@@ -100,14 +100,14 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center">
           {/* Text block */}
           <div className="max-w-2xl">
-            <motion.p
+            <motion.h1
               className="text-secondary font-medium mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               {getGreeting()}, I am
-            </motion.p>
+            </motion.h1>
 
             <motion.h1
               className="text-white text-5xl font-bold mb-6"
@@ -245,7 +245,7 @@ const Hero = () => {
           />
         </svg>
       </motion.div>
-    </section>
+    </main>
   )
 }
 
