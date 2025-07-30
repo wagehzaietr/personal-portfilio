@@ -94,6 +94,14 @@ export const projectsData = [
     tags: ['React', 'Javascript', 'Tailwind CSS', 'i18next', 'Supabase', 'Auth System'],
     technologies: ['React.js', 'Tailwind CSS', 'Supabase', 'i18next', 'Authentication'],
     link: 'https://sham-deals.netlify.app'
+  },
+  {
+    id: 13,
+    category: 'web',
+    image: '/project14.jpg',
+    tags: ['React', 'Typescript', 'Tailwind CSS', 'next js 15', , 'Shadcn UI'],
+    technologies: ['React.js', 'Tailwind CSS', ,'Next 15', 'Shadcn UI'],
+    link: 'https://pizzeria-website-nine.vercel.app'
   }
 ]
 
