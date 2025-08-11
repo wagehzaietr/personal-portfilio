@@ -580,9 +580,6 @@ const Contact = () => {
             <p className='text-gray-400 text-sm'>
               &copy; {new Date().getFullYear()} Wageh Zaietr. All rights reserved.
             </p>
-            <p className='text-gray-500 text-xs'>
-              Crafted with ❤️ and lots of ☕
-            </p>
           </div>
         </motion.footer>
       </div>
