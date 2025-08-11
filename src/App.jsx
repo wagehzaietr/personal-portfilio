@@ -11,6 +11,7 @@ import Contact from './components/pages/Contact'
 const ProjectDetail = lazy(() => import('./components/pages/ProjectDetail'))
 const HomePage = lazy(() => import('./components/pages/HomePage'))
 
+
 function App () {
 
   return (
