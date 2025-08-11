@@ -6,7 +6,7 @@
       "detailedDescription": "RapidQr is a fast and efficient QR code generator built with React and styled with Tailwind CSS. The application allows users to quickly generate QR codes for various types of content including URLs, text, email addresses, and more. Features include real-time preview, customizable styling options, and instant download functionality.",
       "features": [
         "Real-time QR generation",
-        "Multiple content types", 
+        "Multiple content types",
         "Customizable styling",
         "Instant download"
       ]
@@ -17,7 +17,7 @@
       "detailedDescription": "Pixelgramm is a comprehensive social media platform that replicates the core functionality of Instagram. Built with modern web technologies, it features user authentication, photo sharing, real-time feeds, likes, comments, and user profiles. The application demonstrates full-stack development skills with a focus on performance and user experience.",
       "features": [
         "User Authentication",
-        "Photo Sharing", 
+        "Photo Sharing",
         "Real-time Feed",
         "Social Interactions",
         "Responsive Design"
@@ -30,7 +30,7 @@
       "features": [
         "Bilingual Support",
         "E-commerce Functionality",
-        "Lazy Loading", 
+        "Lazy Loading",
         "SEO Optimized",
         "Luxury Design"
       ]
@@ -74,6 +74,10 @@
     "13": {
       "title": "Pizzeria",
       "description": "A modern pizza ordering website UI with an add to cart feature, and a seamless ordering experience."
+    },
+    "14": {
+      "title": "NeoChat AI",
+      "description": "Next-gen chat meets AI magic—create and launch your own smart chatbot in just minutes."
     }
   },
   "ui": {

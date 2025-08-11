@@ -108,7 +108,7 @@ export const projectsData = [
     technologies: ['React.js', 'Tailwind CSS', 'Local Storage', 'Arabic Support'],
     link: 'https://quwa.netlify.app',
     isHot: true,
-    isLatest: true,
+    isLatest: false,
     isAiPowerd : true
   },
   {
@@ -125,11 +125,22 @@ export const projectsData = [
     id: 13,
     category: 'web',
     image: '/project14.jpg',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js 15', 'Shadcn UI'],
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js 15', 'Shadcn UI',],
     technologies: ['React.js', 'Tailwind CSS', 'Next.js 15', 'Shadcn UI'],
     link: 'https://pizzeria-website-nine.vercel.app',
     isHot: true,
     isLatest: true
+  },
+  {
+    id: 14,
+    category: 'web-app',
+    image: '/project15.jpg',
+    tags: [ 'TypeScript', 'Tailwind CSS', 'Next.js 15', 'Shadcn UI','Google Gemini AI'],
+    technologies: ['React.js', 'Tailwind CSS', 'Next.js 15', 'Shadcn UI'],
+    link: 'https://neochat-ai.vercel.app',
+    isHot: true,
+    isLatest: true,
+    isAiPowerd : true
   }
 ];
 
@@ -161,19 +172,13 @@ export const timeline = [
       description: 'Led the frontend team in developing cutting-edge web applications using React and modern web technologies.'
     },
     {
-      year: '2021',
-      title: 'UI/UX Designer & Developer',
-      company: 'Creative Digital Agency',
-      description: 'Created engaging user experiences and implemented frontend solutions for various clients across industries.'
-    },
-    {
-      year: '2019',
+      year: '2024',
       title: 'Frontend Developer',
       company: 'Web Solutions Co.',
       description: 'Built responsive and interactive web interfaces for e-commerce and SaaS platforms.'
     },
     {
-      year: '2017',
+      year: '2022',
       title: 'Junior Web Developer',
       company: 'StartUp Ventures',
       description: 'Developed and maintained websites and web applications for early-stage startups.'
@@ -189,3 +194,4 @@ export const timeline = [
       { name: 'Tailwind CSS', level: 'Proficient' },
       { name: 'Git', level: 'Proficient' },
 };`;
+

@@ -72,7 +72,7 @@ const ProjectDetail = () => {
               className='flex items-center gap-2 text-accent hover:text-white transition-colors group'
             >
               <FiArrowLeft className='group-hover:-translate-x-1 transition-transform' />
-              <span>Back</span>
+              <span>{getTranslation(language, 'ui.back')}</span>
             </button>
 
             <div className='flex items-center gap-2'>
@@ -201,7 +201,7 @@ const ProjectDetail = () => {
               {/* Project Actions */}
               <div className='bg-primary/20 border border-gray-700 rounded-xl p-6'>
                 <h3 className='text-lg font-semibold text-white mb-4'>
-                  {getTranslation(language, 'ui.projectLinks')}
+                  {getTranslation(language, 'ui.viewLiveSite')}
                 </h3>
                 <div className='space-y-3'>
                   <a
