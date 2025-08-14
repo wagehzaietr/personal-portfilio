@@ -10,9 +10,9 @@ const Projects = () => {
   
   // Configuration
   const config = {
-    projectsPerPage: 6,
-    animationDuration: 0.4,
-    staggerDelay: 0.08
+    projectsPerPage: 3,
+    animationDuration: 0.2,
+    staggerDelay: 0.06
   }
 
   // Project categories with icons
@@ -142,9 +142,9 @@ const Projects = () => {
             <motion.button
               key={category.id}
               onClick={() => handleFilterChange(category.id)}
-              className={`group relative px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 border backdrop-blur-sm
+              className={`group relative px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 border 
                 ${activeFilter === category.id
-                  ? 'bg-accent text-white border-accent shadow-lg shadow-accent/25 scale-105'
+                  ? 'bg-accent text-white border-accent scale-105'
                   : 'bg-background/20 text-gray-300 border-gray-700/50 hover:bg-background/40 hover:text-white hover:border-gray-600'
                 }`}
               whileHover={{ scale: 1.05 }}
@@ -227,7 +227,7 @@ const ProjectCard = ({ project, categories, variants, index }) => (
       y: -12, 
       transition: { duration: 0.3, ease: "easeOut" }
     }}
-    className='group relative bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-800/50 hover:border-accent/30 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-accent/10'
+    className='group relative bg-gradient-to-br from-primary/20 to-primary/5  rounded-2xl overflow-hidden border border-gray-800/50 hover:border-accent/30 transition-all duration-500 '
   >
     {/* Project Image */}
     <div className='relative aspect-video overflow-hidden'>
@@ -235,7 +235,7 @@ const ProjectCard = ({ project, categories, variants, index }) => (
         src={project.image}
         alt={project.title}
         loading='lazy'
-        className='w-full h-full object-cover transition-all duration-700 group-hover:scale-110'
+        className='w-full h-full object-contain transition-all duration-700 group-hover:scale-110'
       />
       
       {/* Overlay */}
@@ -244,12 +244,12 @@ const ProjectCard = ({ project, categories, variants, index }) => (
       {/* Badges */}
       <div className='absolute top-3 left-3 flex gap-2'>
         {project.isHot && (
-          <span className='bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg'>
+          <span className='bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold'>
             🔥 Hot
           </span>
         )}
         {project.isAiPowerd && (
-          <span className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg'>
+          <span className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold'>
             🤖 AI Powered
           </span>
         )}
@@ -300,7 +300,7 @@ const ProjectCard = ({ project, categories, variants, index }) => (
           href={project.link}
           target='_blank'
           rel='noopener noreferrer'
-          className='flex-1 text-center py-2 px-4 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white rounded-lg transition-all duration-300 text-sm font-medium shadow-lg hover:shadow-accent/25'
+          className='flex-1 text-center py-2 px-4 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white rounded-lg transition-all duration-300 text-sm font-medium '
         >
           Live Demo
         </a>
@@ -355,26 +355,7 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
       </motion.button>
 
       {/* Page Numbers */}
-      <div className='flex gap-1'>
-        {getPageNumbers().map((page, index) => (
-          <motion.button
-            key={index}
-            onClick={() => typeof page === 'number' && onPageChange(page)}
-            disabled={page === '...'}
-            whileHover={{ scale: typeof page === 'number' ? 1.1 : 1 }}
-            whileTap={{ scale: typeof page === 'number' ? 0.9 : 1 }}
-            className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
-              page === currentPage
-                ? 'bg-accent text-white shadow-lg shadow-accent/25'
-                : page === '...'
-                ? 'text-gray-500 cursor-default'
-                : 'bg-background/40 text-gray-300 hover:bg-background/60 hover:text-white border border-gray-700/50 hover:border-gray-600'
-            }`}
-          >
-            {page}
-          </motion.button>
-        ))}
-      </div>
+
 
       {/* Next Button */}
       <motion.button

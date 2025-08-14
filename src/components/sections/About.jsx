@@ -165,10 +165,6 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-accent/10 rounded-full">
-            <span className="text-accent">👨‍💻</span>
-            <span className="text-sm font-medium text-accent">About Me</span>
-          </div>
 
           <h2 className="font-bold text-4xl md:text-6xl mb-6 bg-gradient-to-r from-white via-gray-200 to-accent bg-clip-text text-transparent">
             Get to Know Me

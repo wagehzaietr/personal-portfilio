@@ -10,9 +10,9 @@ import {
   FaSpinner,
   FaMapMarkerAlt,
   FaEnvelope,
-  FaPhone,
   FaClock
 } from 'react-icons/fa'
+import FloatingSocial from './../ui/FloatingSocial';
 import { 
   HiOutlineMail, 
   HiOutlineLocationMarker, 
@@ -583,6 +583,7 @@ const Contact = () => {
           </div>
         </motion.footer>
       </div>
+      <FloatingSocial/>
     </section>
   )
 }

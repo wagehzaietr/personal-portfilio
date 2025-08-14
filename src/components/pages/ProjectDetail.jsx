@@ -11,7 +11,6 @@ import {
   FiCalendar,
   FiCode,
   FiEye,
-  FiHeart
 } from 'react-icons/fi'
 
 // Animation variants
